@@ -1,0 +1,13 @@
+// Flexbox
+
+// Align content center vertically and horizontally
+.cen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Styling for header and footer
+.header, .footer {
+    padding: 20px 0;
+}

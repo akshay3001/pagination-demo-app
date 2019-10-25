@@ -1,0 +1,41 @@
+<!-- Start of main Section -->
+<section class="container">
+  <header class="cen header">
+    <h1>List of Users</h1>
+  </header>
+  <!-- Start of table for showing list of users -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of pageOfItems; index as i">
+        <th scope="row">{{ user.id }}</th>
+        <td>
+          {{ user.name }}
+        </td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address.suite }} {{ user.address.street }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- End of table for showing list of users -->
+
+  <!-- Start of pagination component -->
+  <footer class="footer cen container">
+    <jw-pagination [items]="users" [pageSize]="pageSize" [initialPage]="initialPage"
+      (changePage)="onChangePage($event)">
+    </jw-pagination>
+  </footer>
+  <!-- End of pagination component -->
+
+</section>
+<!-- End of main Section -->
+
+<router-outlet></router-outlet>
